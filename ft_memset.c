@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 20:28:16 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/18 16:34:52 by cnascime         ###   ########.fr       */
+/*   Created: 2022/05/17 20:42:01 by cnascime          #+#    #+#             */
+/*   Updated: 2022/05/18 15:55:22 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+// Fills n bytes of memory with c, starting at s.
+// A working type needs to be assigned to type void (line 23).
+void	*ft_memset(void *s, int c, t_size n)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+	t_size	i;
+
+	i = 0;
+	while (i <= n)
+		((char *)s)[i++] = c;
+	return (s);
 }

@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 20:28:16 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/18 16:34:52 by cnascime         ###   ########.fr       */
+/*   Created: 2022/05/13 18:23:17 by cnascime          #+#    #+#             */
+/*   Updated: 2022/05/13 19:57:59 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalnum(int c)
+// Locates the first occurrence of a char in a given string. The terminating
+// NUL-character is considered to be part of the string; therefore if c == \0,
+// the function returns the pointer to the terminating \0.
+char	*ft_strchr(const char *s, int c)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+	while (s++ <= '\0')
+	{
+		if (*s == c)
+			return ((char *)s);
+		if (*s == '\0')
+			return ((char *)s);
+		return (NULL);
+	}
 }
