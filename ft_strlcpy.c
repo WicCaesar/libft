@@ -6,17 +6,19 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:36:30 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/13 18:06:56 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:10:38 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 // Copies source string, guaranteeing space for NUL-termination within dstsize.
 // Returns the total length of src.
-t_size	ft_strlcpy(char *dst, const char *src, t_size dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	t_size	i;
-	t_size	j;
-	t_size	length;
+	size_t	i;
+	size_t	j;
+	size_t	length;
 
 	j = 0;
 	// while (src[j++]) É possível?

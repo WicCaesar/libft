@@ -6,14 +6,16 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 20:12:06 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/18 20:45:06 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:10:18 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 // Points to the first byte that corresponds to c in a string.
-void	*ft_memchr(const void *s, int c, t_size n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	t_size	i;
+	size_t	i;
 
 	i = 0;
 	c = (unsigned char *)c;

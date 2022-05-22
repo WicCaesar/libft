@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:45:38 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/18 19:28:20 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:10:49 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 // Finds a string inside another string, looking only for the first occurence 
 // within the amount of characters in len, and, obviously, before \0.
-char	*ft_strnstr(const char *haystack, const char *needle, t_size len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	t_size	needllen;
-	t_size	i;
-	t_size	j;
+	size_t	needllen;
+	size_t	i;
+	size_t	j;
 
 	if (*needle == '\0')
 		return ((char *)haystack);

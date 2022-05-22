@@ -6,17 +6,19 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:37:56 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/13 18:11:45 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:10:34 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 // Adds source string to the end of destination, guaranteeing space for 
 // NUL-termination within dstsize. Returns the initial length of dst + src.
-t_size	ft_strlcat(char *dst, const char *src, t_size dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	t_size	srclength;
-	t_size	dstlength;
-	t_size	i;
+	size_t	srclength;
+	size_t	dstlength;
+	size_t	i;
 
 	srclength = 0;
 	while (src[srclength] != '\0')
@@ -35,6 +37,6 @@ t_size	ft_strlcat(char *dst, const char *src, t_size dstsize)
 		dstlength++;
 		i++;
 	}
-	dest[destlength] = '\0';
+	dst[dstlength] = '\0';
 	return (srclength);
 }

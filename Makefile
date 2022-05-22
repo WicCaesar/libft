@@ -4,33 +4,131 @@ SOURCES	= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.
 # .c=.o implicitly compiles the source-code into binary objects.
 OBJECTS	= ${SOURCES:.c=.o}
 LIBNAME	= libft.a
-COMPILE	= cc -std=c99
+COMPILE	= cc
 REMOVE	= rm -f
-FLAGS		= -Wall -Wextra -Werror -I ${HEADERDIR}
+FLAGS		= -Wall -Wextra -Werror
+
+# If bonus functions are present
+BONUSSOURCES	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BONUSOBJECTS	= ${BONUSSOURCES:.c=.o}
+ifdef HASBONUS
+	ALLOBJECTS = ${OBJECTS} ${BONUSOBJECTS}
+else
+	ALLOBJECTS = ${OBJECTS}
+
+bonus: #todo
+	make HASBONUS=1 all
 
 # Compiles from open-source to binary, but doesn't link. Necessary to run flags.
-.c.o:	${OBJECTS}
+.c.o:		${OBJECTS}
 	${COMPILE} ${FLAGS} -c $< -o ${<:.c=.o}
 
 # Calling its name acts as its own makefile. Will compile only if the object dependencies are fulfilled.
 # ar creates an archive (here, library) from the files member (objects), replacing them as needed.
 # ranlib simply indexes every function in the library.
-${LIBNAME}:	${OBJECTS}
-	ar rc ${LIBNAME} ${OBJECTS}
+${LIBNAME}:	${ALLOBJECTS}
+	ar rc ${LIBNAME} ${ALLOBJECTS}
 	ranlib libft.a
 
 all:  ${LIBNAME}
 
 # Removes only compiled objects.
 clean:
-      ${REMOVE} ${OBJECTS}
+	${REMOVE} ${ALLOBJECTS}
 
 # Removes compiled objects first, then proceeds to remove the library itself.
-fclean:     clean
-      ${REMOVE} ${LIBNAME}
+fclean:		clean
+    ${REMOVE} ${LIBNAME}
  
 # Forces the recompilation even if everything is up to date.
-re:         fclean all
- 
+re:			fclean all
+
 # Ignores files that could eventually be named after any of these parameters.
-.PHONY:     all clean fclean re
+.PHONY:		all bonus clean fclean re
+
+
+
+
+
+
+
+*****************************
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -c
+NAME = libft.a
+
+SRCS =  \
+ft_atoi.c \
+ft_bzero.c \
+ft_calloc.c \
+ft_isalnum.c \
+ft_isalpha.c \
+ft_isascii.c \
+ft_isdigit.c \
+ft_isprint.c \
+ft_itoa.c \
+ft_memcpy.c \
+ft_memchr.c \
+ft_memcmp.c \
+ft_memmove.c \
+ft_memset.c \
+ft_putchar_fd.c \
+ft_putendl_fd.c \
+ft_putnbr_fd.c \
+ft_putstr_fd.c \
+ft_split.c \
+ft_strchr.c \
+ft_strdup.c \
+ft_strjoin.c \
+ft_strlcat.c \
+ft_strlcpy.c \
+ft_strlen.c \
+ft_strmapi.c \
+ft_strncmp.c \
+ft_strnstr.c \
+ft_strrchr.c \
+ft_strtrim.c \
+ft_striteri.c \
+ft_substr.c \
+ft_tolower.c \
+ft_toupper.c
+
+
+BONUSES = \
+ft_lstnew.c \
+ft_lstadd_front.c \
+ft_lstsize.c \
+ft_lstlast.c \
+ft_lstadd_back.c \
+ft_lstdelone.c \
+ft_lstclear.c \
+ft_lstiter.c \
+ft_lstmap.c
+
+OBJS = $(SRCS:.c=.o)
+BONUS_OBJS = $(BONUSES:.c=.o)
+ifdef WITH_BONUS
+	OBJ_FILES = ${OBJS} ${BONUS_OBJS}
+else
+	OBJ_FILES = ${OBJS}
+all: $(NAME)
+
+$(NAME): $(OBJ_FILES)
+	ar crs $@ $(OBJ_FILES)
+
+bonus:
+	make WITH_BONUS=1 all
+
+%.o: %.c
+	$(CC) $(CFLAGS) $< -o ${<:.c=.o}
+
+clean:
+	rm -f $(OBJS) $(BONUS_OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: clean all
+
+.PHONY: all bonus clean fclean re

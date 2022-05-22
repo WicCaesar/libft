@@ -6,14 +6,16 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 16:09:34 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/13 18:07:05 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:10:46 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 // Compares n characters of two strings up to \0, returns any difference or 0.
-int	ft_strncmp(const char *s1, const char *s2, t_size n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	t_size	i;
+	size_t	i;
 
 	i = 0;
 	if (n == 0)
