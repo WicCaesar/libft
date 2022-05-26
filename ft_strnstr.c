@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:45:38 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/20 21:10:49 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:13:46 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 
-// Stack Overflow
+/* Stack Overflow
 char	*strnstr(const char *haystack, const char *needle, size_t len)
 {
 	int		i;
@@ -58,7 +58,7 @@ char	*strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 
-/*#include <stdio.h> // Comentar tudo
+#include <stdio.h> // Comentar tudo
 #include <string.h>
 
 int    main(void)

@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 18:23:17 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/25 21:20:57 by cnascime         ###   ########.fr       */
+/*   Created: 2022/05/13 18:48:05 by cnascime          #+#    #+#             */
+/*   Updated: 2022/05/13 18:52:46 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-// Locates the first occurrence of a char in a given string. The terminating
-// NUL-character is considered to be part of the string; therefore if c == \0,
-// the function returns the pointer to the terminating \0.
-char	*ft_strchr(const char *s, int c)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	int	i;
+	char	*reader;
+	char	*check;
 
-	i = 0;
-	while (s[i] != '\0')
+	if (*needle == '\0')
+		return (haystack);
+	while (*haystack != '\0')
 	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-		i++;
+		reader = haystack;
+		check = needle;
+		while (*reader == *check && *reader != '\0' && *check != '\0')
+		{
+			reader++;
+			check++;
+		}
+		if (*check == '\0')
+			return (haystack);
+		haystack++;
 	}
-	if (s[i] == (char)c)
-		return ((char *)s + i);
 	return (0);
 }

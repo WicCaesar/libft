@@ -1,10 +1,9 @@
-SOURCES	= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c
-            ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c
-            ft_strmapi.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
+SOURCES	= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcpy.c ft_memset.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c
+#ft_calloc.c #ft_itoa.c ft_memcmp.c ft_memmove.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_striteri.c ft_strmapi.c ft_strtrim.c ft_substr.c ft_strjoin.c
 # .c=.o implicitly compiles the source-code into binary objects.
 OBJECTS	= ${SOURCES:.c=.o}
 LIBNAME	= libft.a
-COMPILE	= cc
+COMPILE	= gcc
 REMOVE	= rm -f
 FLAGS	= -Wall -Wextra -Werror
 
@@ -15,6 +14,7 @@ ifdef HASBONUS
 	ALLOBJECTS = ${OBJECTS} ${BONUSOBJECTS}
 else
 	ALLOBJECTS = ${OBJECTS}
+endif
 
 bonus: #todo
 	make HASBONUS=1 all
@@ -28,10 +28,9 @@ bonus: #todo
 # ranlib simply indexes every function in the library.
 ${LIBNAME}:	${ALLOBJECTS}
 	ar rc ${LIBNAME} ${ALLOBJECTS}
-	ranlib ${LIBNAME}
-# pesquisar ar rcs $@ ${ALLOBJECTS}
+	ranlib libft.a
 
-all:  ${LIBNAME}
+all:		${LIBNAME}
 
 # Removes only compiled objects.
 clean:
@@ -39,8 +38,8 @@ clean:
 
 # Removes compiled objects first, then proceeds to remove the library itself.
 fclean:		clean
-    ${REMOVE} ${LIBNAME}
- 
+	${REMOVE} ${LIBNAME}
+
 # Forces the recompilation even if everything is up to date.
 re:			fclean all
 

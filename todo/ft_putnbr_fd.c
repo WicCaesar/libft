@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/18 20:12:06 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/25 16:04:53 by cnascime         ###   ########.fr       */
+/*   Created: 2022/05/09 18:45:22 by cnascime          #+#    #+#             */
+/*   Updated: 2022/05/25 16:11:41 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-// Points to the first byte that corresponds to c in a string.
-void	*ft_memchr(const void *s, int c, size_t n)
-{
-	size_t			i;
-	unsigned char	*string;
-
-	i = 0;
-	string = (unsigned char *)s;
-	while (i < n && string[i] != '\0')
-	{
-		if (string[i] == (unsigned char)c)
-			return (string + i);
-		i++;
-	}
-	return (NULL);
-}
+/*
+n: The integer to output.
+fd: The file descriptor on which to write.
+Outputs the integer ’n’ to the given file descriptor.
+*/

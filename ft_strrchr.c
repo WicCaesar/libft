@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:00:00 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/21 20:22:09 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/05/25 22:13:40 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	length;
 	char	*rewind;
 
-	length = ft_strlen(s) + 1;
-	rewind = (char *)s[length]; // descobrir se é necessário char *
-	while (length-- >= 0)
+	length = ft_strlen(s);
+	rewind = (char *)s + length;
+	while (length-- > 0)
 	{
-		if (c == '\0')
-			return (s[length]);
-		if (*rewind-- == c)
+		if (*rewind == c)
 			return (rewind);
+		rewind--;
 	}
 	return (NULL);
 }

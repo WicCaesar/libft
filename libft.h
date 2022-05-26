@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:13:09 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/25 03:50:30 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/05/25 15:22:37 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 
 // typedef unsigned long t_size; Desnecessário se utilizar a biblioteca malloc
+
+// typedef do bônus
 
 size_t	ft_strlen(const char *s);
 void	*ft_memcpy(void *dst, const void *src, size_t n);

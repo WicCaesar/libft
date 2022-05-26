@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 18:23:17 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/25 21:20:57 by cnascime         ###   ########.fr       */
+/*   Created: 2022/05/21 16:59:54 by cnascime          #+#    #+#             */
+/*   Updated: 2022/05/25 16:05:38 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Locates the first occurrence of a char in a given string. The terminating
-// NUL-character is considered to be part of the string; therefore if c == \0,
-// the function returns the pointer to the terminating \0.
-char	*ft_strchr(const char *s, int c)
+// Compares two strings of size n and returns the difference between them.
+int	memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
+	size_t			i;
+	unsigned char	*ps1;
+	unsigned char	*ps2;
 
+	ps1 = (unsigned char *)s1;
+	ps2 = (unsigned char *)s2;
+	if (n == 0)
+		return (0);
 	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
+	while (ps1[i] == ps2[i] && ps1[i] != '\0')
 		i++;
-	}
-	if (s[i] == (char)c)
-		return ((char *)s + i);
-	return (0);
+	return (ps1[i] - ps2[i]);
 }
