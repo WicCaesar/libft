@@ -23,40 +23,66 @@ void	test_ft_strlen(void)
 
 void	test_ft_memcpy(void)
 {
-	char	memcpy_ruiva[] = "Ruiva";
+	char	memcpy_ruivo[] = "Ruivo";
 	char	memcpy_morena[] = "Morena";
-	char	dst0[] = "Loira do Tchan";
-	char	dst1[] = "Loira do Tchan";
-	char	dst2[20];
-	char	dst3[] = "Loira do Tchan";
+	char	memcpy_galinha[] = "A galinha choca";
+	char	memcpy_dst0[] = "Loira do Tchan";
+	char	memcpy_dst1[] = "Loira do Tchan";
+	char	memcpy_dst2[20];
+	char	memcpy_dst3[] = "Loira do Tchan";
+	char	memcpy_dst4[] = "chocou um ovo";
 	
 	printf("ft_memcpy\n");
-	printf("%s\n", memcpy(dst0, memcpy_ruiva, 5));
-	printf("%s\n", memcpy(dst1, memcpy_ruiva, 5));
-	printf("%s\n", memcpy(dst2, memcpy_morena, 6));
-	printf("%s\n", memcpy(dst3, memcpy_ruiva, 6)); // se mandar até NUL-byte
-	
-	char	memcpy_ruiva2[6] = "Ruiva";
+	printf("%s\n", memcpy(memcpy_dst0, memcpy_ruivo, 5));
+	printf("%s\n", memcpy(memcpy_dst1, memcpy_ruivo, 4));
+	printf("%s\n", memcpy(memcpy_dst2, memcpy_morena, 6));
+	printf("%s\n", memcpy(memcpy_dst3, memcpy_ruivo, 6)); // até NUL-byte
+	printf("%s\n", memcpy(memcpy_dst4, memcpy_galinha, 10));
+	/*
+	char	memcpy_ruivo2[6] = "Ruivo";
 	char	memcpy_morena2[7] = "Morena";
-	char	dst02[] = "Loira do Tchan";
-	char	dst12[] = "Loira do Tchan";
-	char	dst22[20];
-	char	dst32[] = "Loira do Tchan";
+	char	memcpy_galinha2[] = "A galinha choca";
+	char	memcpy_dst02[] = "Loira do Tchan";
+	char	memcpy_dst12[] = "Loira do Tchan";
+	char	memcpy_dst22[20];
+	char	memcpy_dst32[] = "Loira do Tchan";
+	char	memcpy_dst42[] = "chocou um ovo";
 
-	printf("%s\n", ft_memcpy(dst02, memcpy_ruiva2, 5));
-	printf("%s\n", ft_memcpy(dst12, memcpy_ruiva2, 5));
-	printf("%s\n", ft_memcpy(dst22, memcpy_morena2, 6));
-	printf("%s\n", ft_memcpy(dst32, memcpy_ruiva2, 6)); // se mandar até NUL-byte
+	printf("%s\n", ft_memcpy(memcpy_dst02, memcpy_ruivo2, 5));
+	printf("%s\n", ft_memcpy(memcpy_dst12, memcpy_ruivo2, 4));
+	printf("%s\n", ft_memcpy(memcpy_dst22, memcpy_morena2, 6));
+	printf("%s\n", ft_memcpy(memcpy_dst32, memcpy_ruivo2, 6)); // até NUL-byte
+	printf("%s\n", ft_memcpy(memcpy_dst42, memcpy_galinha2, 10));
 	
-	char	dst03[] = "Loira do Tchan";
-	char	dst13[] = "Loira do Tchan";
-	char	dst23[20];
-	char	dst33[] = "Loira do Tchan";
+	char	memcpy_dst03[] = "Loira do Tchan";
+	char	memcpy_dst13[] = "Loira do Tchan";
+	char	memcpy_dst23[20];
+	char	memcpy_dst33[] = "Loira do Tchan";
 
-	printf("%s\n", ft_memcpy(dst03, "Ruiva", 5));
-	printf("%s\n", ft_memcpy(dst13, "Ruiva", 5));
-	printf("%s\n", ft_memcpy(dst23, "Morena", 6));
-	printf("%s\n", ft_memcpy(dst33, "Ruiva", 6)); // se mandar até NUL-byte
+	printf("%s\n", ft_memcpy(memcpy_dst03, "Ruivo", 5));
+	printf("%s\n", ft_memcpy(memcpy_dst13, "Ruivo", 4));
+	printf("%s\n", ft_memcpy(memcpy_dst23, "Morena", 6));
+	printf("%s\n", ft_memcpy(memcpy_dst33, "Ruivo", 6)); // até NUL-byte
+
+	printf("%s\n", ft_memcpy("Loira do Tchan", "Ruivo", 4));
+	printf("%s\n", ft_memcpy("Loira do Tchan", "Ruivo", 4));
+	printf("%s\n", ft_memcpy("", "Morena", 6));
+	printf("%s\n", ft_memcpy("Loira do Tchan", "Ruivo", 6)); // até NUL-byte
+
+	// main do jocardos
+	printf("\n---- memcpy jocardos ----\n");
+	char src_real1[50];
+	char src_test1[50];
+	char dest_real1[50];
+	char dest_test1[50];
+	strcpy(src_real1, "Lorem ipsum dolor sit amet");
+	strcpy(src_test1, "Lorem ipsum dolor sit amet");
+	strcpy(dest_real1, "consectetur adipiscing");
+	strcpy(dest_test1, "consectetur adipiscing");
+	printf("src content : %s, dest content : %s\n", src_real1, dest_real1);
+	memcpy(dest_real1, src_real1, 6);
+	ft_memcpy(dest_test1, src_test1, 6);
+	printf("memcpy (dest, src, 6) : %s, real : %s\n", dest_test1, dest_real1);*/
 	printf("---------------------------------------------------\n\v");
 }
 
@@ -75,8 +101,8 @@ void	test_ft_memset(void)
 	printf("%s\n", ft_memset(memset_word2, '$', 3));
 	printf("%s\n", memset(memset_word3, '%', 5));
 	printf("%s\n", ft_memset(memset_word3, '%', 5));
-	printf("%s\n", memset(memset_word4, '#', 8));
-	printf("%s\n", ft_memset(memset_word4, '#', 8));
+	printf("%s\n", memset(memset_word4, '.', 8));
+	printf("%s\n", ft_memset(memset_word4, '.', 8));
 	printf("%s\n", memset(memset_word5, '!', 1));
 	printf("%s\n", ft_memset(memset_word5, '!', 1));
 	printf("---------------------------------------------------\n\v");
@@ -90,56 +116,132 @@ void	test_ft_bzero(void)
 	printf("%s\n", bzero_maeloura);
 	bzero(bzero_maeloura, 4);
 	printf("%s\n", bzero_maeloura);
-	
+
 	char	bzero_maeloura2[] = "22002";
 	printf("%s\n", bzero_maeloura2);
 	ft_bzero(bzero_maeloura2, 4);
 	printf("%s\n", bzero_maeloura2);
+
+	// main do jocardos
+	printf("\n---- bzero jocardos ----\n");
+	char str_real2[50];
+	strcpy(str_real2, "Hello 42");
+	bzero(str_real2, 6);
+	char str_test2[50];
+	strcpy(str_test2, "Hello 42");
+	ft_bzero(str_test2, 6);
+	printf("\"Hello 42\" bzero (6) : %s seventh char : %c, real : %s seventh char : %c\n", str_test2, str_test2[6], str_real2, str_real2[6]);
 	printf("---------------------------------------------------\n\v");
 }
 
-// memmove
-
-/*void	test_ft_memcmp(void)
+void	test_ft_memmove(void)
 {
-	char	s[] = "Vaga-lume";
-	char	s2[] = "Vaga-lume";
-	char	s3[] = "Vagalume";
-	char	s4[] = "Caçarola";
+	char	memmove_ruivo[] = "Ruivo";
+	char	memmove_morena[] = "Morena";
+	char	memmove_dst0[] = "Loira do Tchan";
+	char	memmove_dst1[] = "Loira do Tchan";
+	char	memmove_dst2[20];
+	char	memmove_dst3[] = "Loira do Tchan";
+	
+	printf("ft_memmove\n");
+	printf("%s\n", memmove(memmove_dst0, memmove_ruivo, 4));
+	printf("%s\n", memmove(memmove_dst1, memmove_ruivo, 4));
+	printf("%s\n", memmove(memmove_dst2, memmove_morena, 6));
+	printf("%s\n", memmove(memmove_dst3, memmove_ruivo, 6)); // até NUL-byte
+	
+	char	memmove_ruivo2[6] = "Ruivo";
+	char	memmove_morena2[7] = "Morena";
+	char	memmove_dst02[] = "Loira do Tchan";
+	char	memmove_dst12[] = "Loira do Tchan";
+	char	memmove_dst22[20];
+	char	memmove_dst32[] = "Loira do Tchan";
+
+	printf("%s\n", ft_memmove(memmove_dst02, memmove_ruivo2, 4));
+	printf("%s\n", ft_memmove(memmove_dst12, memmove_ruivo2, 4));
+	printf("%s\n", ft_memmove(memmove_dst22, memmove_morena2, 6));
+	printf("%s\n", ft_memmove(memmove_dst32, memmove_ruivo2, 6)); // até NUL-byte
+	
+	char	memmove_dst03[] = "Loira do Tchan";
+	char	memmove_dst13[] = "Loira do Tchan";
+	char	memmove_dst23[20];
+	char	memmove_dst33[] = "Loira do Tchan";
+
+	printf("%s\n", ft_memmove(memmove_dst03, "Ruivo", 4));
+	printf("%s\n", ft_memmove(memmove_dst13, "Ruivo", 4));
+	printf("%s\n", ft_memmove(memmove_dst23, "Morena", 6));
+	printf("%s\n", ft_memmove(memmove_dst33, "Ruivo", 6)); // até NUL-byte
+
+	// main do jocardos
+	printf("\n---- memmove jocardos ----\n");
+	char str_test7[] = "memmove can be very useful......";
+	char str_real7[] = "memmove can be very useful......";
+	ft_memmove(str_test7 + 20, str_test7 + 15, 11);
+	memmove(str_real7 + 20, str_real7 + 15, 11);
+	printf("Real : %s\n", str_real7);
+	printf("Test : %s\n", str_test7);
+	printf("---------------------------------------------------\n\v");
+}
+
+void	test_ft_memcmp(void)
+{
+	const char	memcmp_s[] = "Vaga-lume";
+	const char	memcmp_s2[] = "Vaga-lume";
+	const char	memcmp_s3[] = "Vagalume";
+	const char	memcmp_s4[] = "vagabume";
+	const char	memcmp_s5[] = "25696969";
+	const char	memcmp_s6[] = "25696969";
+	const char	memcmp_s7[] = "25808080";
+	const char	memcmp_s8[] = "22737373";
 
 	printf("ft_memcmp\n");
-	printf("%i\n", memcmp(s, s2, 6));
-	printf("%i\n", ft_memcmp(s, s2, 6));
-	printf("%i\n", memcmp(s, s3, 6));
-	printf("%i\n", ft_memcmp(s, s3, 6));
-	printf("%i\n", memcmp(s, s4, 6));
-	printf("%i\n", ft_memcmp(s, s4, 6));
-	printf("%i\n", memcmp(s, s2, 4));
-	printf("%i\n", ft_memcmp(s, s2, 4));
-	printf("%i\n", memcmp(s, s3, 4));
-	printf("%i\n", ft_memcmp(s, s3, 4));
-	printf("%i\n", memcmp(s, s4, 4));
-	printf("%i\n", ft_memcmp(s, s4, 4));
-	printf("%i\n", memcmp("Vagalume", "Vagalume", 6));
-	printf("%i\n", ft_memcmp("Vagalume", "Vagalume", 6));
-	printf("%i\n", memcmp("Vagalume", "Vagalume", 6));
-	printf("%i\n", ft_memcmp("Vagalume", "Vagalume", 6));
-	printf("%i\n", memcmp("Vagalume", "vagabundo", 6));
-	printf("%i\n", ft_memcmp("Vagalume", "vagabundo", 6));
+	printf("%i\n", memcmp(memcmp_s, memcmp_s2, 6));
+	printf("%i\n", ft_memcmp(memcmp_s, memcmp_s2, 6));
+	printf("%i\n", memcmp(memcmp_s, memcmp_s3, 6));
+	printf("%i\n", ft_memcmp(memcmp_s, memcmp_s3, 6));
+	printf("%i\n", memcmp(memcmp_s, memcmp_s4, 6));
+	printf("%i\n", ft_memcmp(memcmp_s, memcmp_s4, 6));
+	printf("%i\n", memcmp(memcmp_s, memcmp_s2, 4));
+	printf("%i\n", ft_memcmp(memcmp_s, memcmp_s2, 4));
+	printf("%i\n", memcmp(memcmp_s, memcmp_s3, 4));
+	printf("%i\n", ft_memcmp(memcmp_s, memcmp_s3, 3));
+	printf("%i\n", memcmp(memcmp_s, memcmp_s4, 4));
+	printf("%i\n", ft_memcmp(memcmp_s, memcmp_s4, 4));
+	printf("%i\n", memcmp(memcmp_s5, memcmp_s6, 8));
+	printf("%i\n", ft_memcmp(memcmp_s5, memcmp_s6, 8));
+	printf("%i\n", memcmp(memcmp_s5, memcmp_s7, 8)); //-2
+	printf("%i\n", ft_memcmp(memcmp_s, memcmp_s7, 8)); //36
+	printf("%i\n", memcmp(memcmp_s5, memcmp_s7, 2)); //0
+	printf("%i\n", ft_memcmp(memcmp_s, memcmp_s7, 2)); //36
+	printf("%i\n", memcmp(memcmp_s5, memcmp_s8, 0));
+	printf("%i\n", ft_memcmp(memcmp_s, memcmp_s8, 0));
+	printf("%i\n", memcmp("Insetisan", "Insetfone", 8)); //1
+	printf("%i\n", ft_memcmp("Insetisan", "Insetfone", 8)); //3
+	printf("%i\n", memcmp("Insetisan", "Insetfone", 5));
+	printf("%i\n", ft_memcmp("Insetisan", "Insetfone", 5));
+	printf("%i\n", memcmp("Fone", "Fone", 4));
+	printf("%i\n", ft_memcmp("Fone", "Fone", 4));
+	printf("%i\n", memcmp("25696969", "25696969", 6));
+	printf("%i\n", ft_memcmp("25696969", "25696969", 6));
+	printf("%i\n", memcmp("25696969", "25808080", 4));//-1
+	printf("%i\n", ft_memcmp("25696969", "25808080", 4));//-2
+	printf("%i\n", memcmp("25696969", "25808080", 2));
+	printf("%i\n", ft_memcmp("25696969", "25808080", 2));
+	printf("%i\n", memcmp("Sanitas", "25808080", 10));//1
+	printf("%i\n", ft_memcmp("Sanitas", "25808080", 10));//33
 	printf("---------------------------------------------------\n\v");
-}*/
+}
 
 void	test_ft_memchr(void)
 {
-	char	s[] = "Perereca";
+	char	memchr_s[] = "Perereca";
 
 	printf("ft_memchr\n");
-	printf("%s\n", memchr(s, 'e', 8));
-	printf("%s\n", ft_memchr(s, 'e', 8));
-	printf("%s\n", memchr(s, 'c', 6));
-	printf("%s\n", ft_memchr(s, 'c', 6));
-	printf("%s\n", memchr(s, 'p', 8));
-	printf("%s\n", ft_memchr(s, 'p', 8));
+	printf("%s\n", memchr(memchr_s, 'e', 8));
+	printf("%s\n", ft_memchr(memchr_s, 'e', 8));
+	printf("%s\n", memchr(memchr_s, 'c', 6));
+	printf("%s\n", ft_memchr(memchr_s, 'c', 6));
+	printf("%s\n", memchr(memchr_s, 'p', 8));
+	printf("%s\n", ft_memchr(memchr_s, 'p', 8));
 	printf("%s\n", memchr("Pererê", 'e', 8));
 	printf("%s\n", ft_memchr("Pererê", 'e', 8));
 	printf("%s\n", memchr("Perereca", 'c', 6));
@@ -221,6 +323,7 @@ void	test_ft_isprint(void)
 	printf("[DEL] %d\n", ft_isprint(127));
 	printf("[NUL] %d\n", isprint(0));
 	printf("[NUL] %d\n", ft_isprint(0));
+	printf("jocardos: ¡ isprint : %d, real : %d\n", ft_isprint(0xA1), isprint(0xA1));
 	printf("---------------------------------------------------\n\v\v\v\v\v\v");
 }
 
@@ -250,57 +353,75 @@ void	test_ft_tolower(void)
 
 void	test_ft_strchr(void)
 {
-	char	strchar_word[] = "Ei, cadê você?";
+	char	strchr_word[] = "Funk do Yudi";
+	char	strchr_word2[] = "40028922";
 
 	printf("ft_strchr\n");
-	printf("c %s\n", strchr(strchar_word, 'c'));
-	printf("c %s\n", ft_strchr(strchar_word, 'c'));
-	printf("%p\n", strchr(strchar_word, 'c'));
-	printf("%p\n", ft_strchr(strchar_word, 'c'));
-	printf("e %s\n", strchr("Beleza!", 'e'));
-	printf("e %s\n", ft_strchr("Beleza!", 'e'));
-	printf("%p\n", strchr("Beleza!", 'e'));
-	printf("%p\n", ft_strchr("Beleza!", 'e'));
-	printf("u %s\n", strchr(strchar_word, 'u'));
-	printf("u %s\n", ft_strchr(strchar_word, 'u'));
-	printf("%p\n", strchr(strchar_word, 'u'));
-	printf("%p\n", ft_strchr(strchar_word, 'u'));
-	printf("o %s\n", strchr("Beleza!", 'o'));
-	printf("o %s\n", ft_strchr("Beleza!", 'o'));
-	printf("%p\n", strchr("Beleza!", 'o'));
-	printf("%p\n", ft_strchr("Beleza!", 'o'));
+	printf("u %s\n", strchr(strchr_word, 'u'));
+	printf("u %s\n", ft_strchr(strchr_word, 'u'));
+	printf("%p\n", strchr(strchr_word, 'u'));
+	printf("%p\n", ft_strchr(strchr_word, 'u'));
+	printf("e %s\n", strchr("Plesteixon", 'e'));
+	printf("e %s\n", ft_strchr("Plesteixon", 'e'));
+	printf("%p\n", strchr("Plesteixon", 'e'));
+	printf("%p\n", ft_strchr("Plesteixon", 'e'));
+	printf("y %s\n", strchr(strchr_word, 'y'));
+	printf("y %s\n", ft_strchr(strchr_word, 'y'));
+	printf("%p\n", strchr(strchr_word, 'y'));
+	printf("%p\n", ft_strchr(strchr_word, 'y'));
+	printf("y %s\n", strchr("Plesteixon", 'y'));
+	printf("y %s\n", ft_strchr("Plesteixon", 'y'));
+	printf("%p\n", strchr("Plesteixon", 'y'));
+	printf("%p\n", ft_strchr("Plesteixon", 'y'));
 	printf("o %s\n", strchr("", 'o'));
 	printf("o %s\n", ft_strchr("", 'o'));
 	printf("%p\n", strchr("", 'o'));
 	printf("%p\n", ft_strchr("", 'o'));
-	printf("\\0 %s\n", strchr(strchar_word, '\0'));
-	printf("\\0 %s\n", ft_strchr(strchar_word, '\0'));
-	printf("%p\n", strchr(strchar_word, '\0'));
-	printf("%p\n", ft_strchr(strchar_word, '\0'));
+	printf("\\0 %s\n", strchr(strchr_word, '\0'));
+	printf("\\0 %s\n", ft_strchr(strchr_word, '\0'));
+	printf("%p\n", strchr(strchr_word, '\0'));
+	printf("%p\n", ft_strchr(strchr_word, '\0'));
+	printf("2 %s\n", strchr(strchr_word2, '2'));
+	printf("2 %s\n", ft_strchr(strchr_word2, '2'));
+	printf("%p\n", strchr(strchr_word2, '2'));
+	printf("%p\n", ft_strchr(strchr_word2, '2'));
+	printf("2 %s\n", strchr("40028922", '2'));
+	printf("2 %s\n", ft_strchr("40028922", '2'));
+	printf("%p\n", strchr("40028922", '2'));
+	printf("%p\n", ft_strchr("40028922", '2'));
+	printf("3 %s\n", strchr(strchr_word2, '3'));
+	printf("3 %s\n", ft_strchr(strchr_word2, '3'));
+	printf("%p\n", strchr(strchr_word2, '3'));
+	printf("%p\n", ft_strchr(strchr_word2, '3'));
+	printf("3 %s\n", strchr("40028922", '3'));
+	printf("3 %s\n", ft_strchr("40028922", '3'));
+	printf("%p\n", strchr("40028922", '3'));
+	printf("%p\n", ft_strchr("40028922", '3'));
 	printf("---------------------------------------------------\n\v");
 }
 
 void	test_ft_strrchr(void)
 {
-	char	strrchar_word[] = "Ei, cadê você?";
+	char	strrchar_word[] = "Funk do Yudi";
+	char	strrchar_word2[] = "40028922";
 
 	printf("ft_strrchr\n");
-	printf("c %s\n", strrchr(strrchar_word, 'c'));
-	printf("c %s\n", ft_strrchr(strrchar_word, 'c'));
-	printf("%p\n", strrchr(strrchar_word, 'c'));
-	printf("%p\n", ft_strrchr(strrchar_word, 'c'));
-	printf("e %s\n", strrchr("Beleza", 'e'));
-	printf("e %s\n", ft_strrchr("Beleza", 'e'));
-	printf("%p\n", strrchr("Beleza", 'e'));
-	printf("%p\n", ft_strrchr("Beleza", 'e'));
 	printf("u %s\n", strrchr(strrchar_word, 'u'));
 	printf("u %s\n", ft_strrchr(strrchar_word, 'u'));
 	printf("%p\n", strrchr(strrchar_word, 'u'));
 	printf("%p\n", ft_strrchr(strrchar_word, 'u'));
-	printf("o %s\n", strrchr("Beleza", 'o'));
-	printf("o %s\n", ft_strrchr("Beleza", 'o'));
-	printf("%p\n", strrchr("Beleza", 'o'));
-	printf("%p\n", ft_strrchr("Beleza", 'o'));
+	printf("e %s\n", strrchr("Plesteixon", 'e'));
+	printf("e %s\n", ft_strrchr("Plesteixon", 'e'));
+	printf("%p\n", strrchr("Plesteixon", 'e'));
+	printf("%p\n", ft_strrchr("Plesteixon", 'e'));
+	printf("y %s\n", strrchr(strrchar_word, 'y'));
+	printf("y %s\n", ft_strrchr(strrchar_word, 'y'));
+	printf("%p\n", strrchr(strrchar_word, 'y'));
+	printf("%p\n", ft_strrchr(strrchar_word, 'y'));
+	printf("y %s\n", strrchr("Plesteixon", 'y'));
+	printf("y %s\n", ft_strrchr("Plesteixon", 'y'));
+	printf("%p\n", strrchr("Plesteixon", 'y'));
+	printf("%p\n", ft_strrchr("Plesteixon", 'y'));
 	printf("o %s\n", strrchr("", 'o'));
 	printf("o %s\n", ft_strrchr("", 'o'));
 	printf("%p\n", strrchr("", 'o'));
@@ -309,6 +430,22 @@ void	test_ft_strrchr(void)
 	printf("\\0 %s\n", ft_strrchr(strrchar_word, '\0'));
 	printf("%p\n", strrchr(strrchar_word, '\0'));
 	printf("%p\n", ft_strrchr(strrchar_word, '\0'));
+	printf("2 %s\n", strrchr(strrchar_word2, '2'));
+	printf("2 %s\n", ft_strrchr(strrchar_word2, '2'));
+	printf("%p\n", strrchr(strrchar_word2, '2'));
+	printf("%p\n", ft_strrchr(strrchar_word2, '2'));
+	printf("2 %s\n", strrchr("40028922", '2'));
+	printf("2 %s\n", ft_strrchr("40028922", '2'));
+	printf("%p\n", strrchr("40028922", '2'));
+	printf("%p\n", ft_strrchr("40028922", '2'));
+	printf("3 %s\n", strrchr(strrchar_word2, '3'));
+	printf("3 %s\n", ft_strrchr(strrchar_word2, '3'));
+	printf("%p\n", strrchr(strrchar_word2, '3'));
+	printf("%p\n", ft_strrchr(strrchar_word2, '3'));
+	printf("3 %s\n", strrchr("40028922", '3'));
+	printf("3 %s\n", ft_strrchr("40028922", '3'));
+	printf("%p\n", strrchr("40028922", '3'));
+	printf("%p\n", ft_strrchr("40028922", '3'));
 	printf("---------------------------------------------------\n\v\v\v\v\v\v");
 }
 
@@ -316,41 +453,70 @@ void	test_ft_strrchr(void)
 
 void	test_ft_strlcpy(void)
 {
-	char	src3[] = "Maracujá";
-	char	src4[] = "Marajá";
-	char	src5[] = "Maravilha";
-	char	dst4[] = "Tem gente!";
-	char	dst5[20] = "";
-	char	dst6[] = "Mara";
+	char	strlcpy_src3[] = "Cabelo";
+	char	strlcpy_src4[] = "Cabeleira";
+	char	strlcpy_src5[] = "Cabeluda";
+	char	strlcpy_dst4[] = "Descabelada";
+	char	strlcpy_dst5[20] = "";
+	char	strlcpy_dst6[] = "Cabe";
 
 	printf("ft_strlcpy\n");
-	printf("%zu\n", strlcpy(dst4, src3, 8));
-	printf("%zu\n", strlcpy(dst5, src4, 4));
-	printf("%zu\n", strlcpy(dst6, src5, 4));
+	printf("%zu\n", strlcpy(strlcpy_dst4, strlcpy_src3, 8));
+	printf("%s\n", strlcpy_dst4);
+	printf("%zu\n", strlcpy(strlcpy_dst5, strlcpy_src4, 10));
+	printf("%s\n", strlcpy_dst5);
+	printf("%zu\n", strlcpy(strlcpy_dst6, strlcpy_src5, 3));
+	printf("%s\n", strlcpy_dst6);
 
-	char	src32[] = "Maracujá";
-	char	src42[] = "Marajá";
-	char	src52[] = "Maravilha";
-	char	dst42[] = "Tem gente!";
-	char	dst52[20] = "";
-	char	dst62[] = "Mara";
+	char	strlcpy_src32[] = "Cabelo";
+	char	strlcpy_src42[] = "Cabeleira";
+	char	strlcpy_src52[] = "Cabeluda";
+	char	strlcpy_dst42[] = "Descabelada";
+	char	strlcpy_dst52[20] = "";
+	char	strlcpy_dst62[] = "Cabe";
 
-	printf("%zu\n", ft_strlcpy(dst42, src32, 8));
-	printf("%zu\n", ft_strlcpy(dst52, src42, 4));
-	printf("%zu\n", ft_strlcpy(dst62, src52, 10));
+	printf("%zu\n", ft_strlcpy(strlcpy_dst42, strlcpy_src32, 8));
+	printf("%s\n", strlcpy_dst42);
+	printf("%zu\n", ft_strlcpy(strlcpy_dst52, strlcpy_src42, 10));
+	printf("%s\n", strlcpy_dst52);
+	printf("%zu\n", ft_strlcpy(strlcpy_dst62, strlcpy_src52, 3));
+	printf("%s\n", strlcpy_dst62);
+
+	// main da Internet
+	char string[] = "Hello there, Venus";
+    char buffer[19];
+    int r;
+
+    r = strlcpy(buffer,string,9);
+
+    printf("Copied '%s' into '%s', length %d\n", string, buffer, r);
+
 	printf("---------------------------------------------------\n\v");
 }
 
 // atoi
 
-// strnstr
+void	test_ft_strnstr(void)
+{
+	printf("%s\n", strnstr("Toatoa ukulele", "ku", 14));
+	printf("%s\n", ft_strnstr("Toatoa ukulele", "ku", 14));
+	printf("%s\n", strnstr("Toatoa ukulele", "ke", 14));
+	printf("%s\n", ft_strnstr("Toatoa ukulele", "ke", 14));
+	printf("%s\n", strnstr("Huehuecoyotl", "Hue", 12));
+	printf("%s\n", ft_strnstr("Huehuecoyotl", "Hue", 12));
+	printf("%s\n", strnstr("Huehuecoyotl", "hue", 12));
+	printf("%s\n", ft_strnstr("Huehuecoyotl", "hue", 12));
+	printf("%s\n", strnstr("Huehuecoyotl", "ue", 12));
+	printf("%s\n", ft_strnstr("Huehuecoyotl", "ue", 12));
+	printf("---------------------------------------------------\n\v");
+}
 
 void	test_ft_strncmp(void)
 {
-	char	strncmp_word1[] = "Eu sou voc8.";
-	char	strncmp_word2[] = "Eu sou voc8.";
-	char	strncmp_word3[] = "Eu sou voz8.";
-	char	strncmp_word4[] = "Eu sou pav8.";
+	char	strncmp_word1[] = "Eu sou voc3.";
+	char	strncmp_word2[] = "Eu sou voc3.";
+	char	strncmp_word3[] = "Eu sou voz3.";
+	char	strncmp_word4[] = "Eu sou pav3.";
 
 	printf("ft_strncmp\n");
 	printf("%d\n", strncmp(strncmp_word1, strncmp_word2, 12));
@@ -384,21 +550,29 @@ void	test_ft_strncmp(void)
 	printf("---------------------------------------------------\n\v");
 }
 
-/* strnstr
-int	main(void)
+void	test_ft_calloc(void)
 {
-    printf("Original: %s\n",    strnstr("Toatoa ukulele", "ku", 14));
-    printf(" Destino: %s\n", ft_strnstr("Toatoa ukulele", "ku", 14));
-    printf("Original: %s\n",    strnstr("Toatoa ukulele", "ke", 14));
-    printf(" Destino: %s\n", ft_strnstr("Toatoa ukulele", "ke", 14));
-    printf("Original: %s\n",    strnstr("Huehuecoyotl", "Hue", 12));
-    printf(" Destino: %s\n", ft_strnstr("Huehuecoyotl", "Hue", 12));
-    printf("Original: %s\n",    strnstr("Huehuecoyotl", "hue", 12));
-    printf(" Destino: %s\n", ft_strnstr("Huehuecoyotl", "hue", 12));
-}*/
-// calloc
+	// main do jocardos
+	printf("\n---- calloc jocardos ----\n");
+	int	*calloc_test;
+	calloc_test = (int *)ft_calloc(6, sizeof(int));
+	printf("Calloc an array of 6 int\n    ");
+	for(int i = 0; i < 6; i++)
+		printf("%d ", calloc_test[i]);
+	printf("\n");
+	free(calloc_test);
+}
 
-// strdup
+void	test_ft_strdup(void)
+{
+	// main do jocardos
+	printf("\n---- strdup jocardos ----\n");
+	char *str9 = "Hello 42";
+	char *str10;
+	str10 = ft_strdup(str9);
+	printf("Original : %s, Dup : %s\n", str9, str10);
+	free(str10);
+}
 
 // substr
 
@@ -430,8 +604,8 @@ int	main(void)
 	test_ft_memcpy();
 	test_ft_memset();
 	test_ft_bzero();
-	// memmove
-	// test_ft_memcmp();
+	test_ft_memmove();
+	test_ft_memcmp();
 	test_ft_memchr();
 	test_ft_isalpha();
 	test_ft_isdigit();
@@ -445,10 +619,10 @@ int	main(void)
 	// strlcat
 	test_ft_strlcpy();
 	// atoi
-	// strnstr
+	test_ft_strnstr();
 	test_ft_strncmp();
-	// calloc
-	// strdup
+	test_ft_calloc();
+	test_ft_strdup();
 	// substr
 	// strjoin
 	// putchar_fd

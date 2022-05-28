@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/18 15:57:43 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/27 18:48:24 by cnascime         ###   ########.fr       */
+/*   Created: 2022/05/21 16:59:54 by cnascime          #+#    #+#             */
+/*   Updated: 2022/05/26 19:07:27 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Returns a pointer to a duplicate of a given string.
-char	*ft_strdup(const char *s1)
+// Compares two strings up to n and returns the difference between them.
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*ditto;
-	int		length;
+	size_t			i;
+	unsigned char	*ps1;
+	unsigned char	*ps2;
 
-	length = ft_strlen(s1) + 1;
-	ditto = malloc(sizeof(*ditto) * length);
-	if (ditto == NULL)
-		return (NULL);
-	ditto = ft_memmove(ditto, s1, length);
-	return (ditto);
+	ps1 = (unsigned char *)s1;
+	ps2 = (unsigned char *)s2;
+	if (n == 0)
+		return (0);
+	i = 0;
+	while (i < n)
+	{
+		if (ps1[i] != ps2[i])
+			return (ps1[i] - ps2[i]);
+		i++;
+	}
+	return (0);
 }

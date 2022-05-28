@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/18 15:57:43 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/27 18:48:24 by cnascime         ###   ########.fr       */
+/*   Created: 2022/05/27 14:55:14 by cnascime          #+#    #+#             */
+/*   Updated: 2022/05/27 18:23:27 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Returns a pointer to a duplicate of a given string.
-char	*ft_strdup(const char *s1)
+// Allocate memory for count objects that are size bytes of memory each.
+// Returns a pointer to the allocated memory, which is filled with bytes of 0.
+void	*ft_calloc(size_t count, size_t size)
 {
-	char	*ditto;
-	int		length;
+	void	*mallocation;
 
-	length = ft_strlen(s1) + 1;
-	ditto = malloc(sizeof(*ditto) * length);
-	if (ditto == NULL)
+	if (count == 0 || size == 0)
+	{
+		count = 1;
+		size = 1;
+	}
+	mallocation = malloc(count * size);
+	if (!mallocation)
 		return (NULL);
-	ditto = ft_memmove(ditto, s1, length);
-	return (ditto);
+	ft_bzero(mallocation, count * size);
+	return (mallocation);
 }
