@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:36:30 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/27 21:11:05 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/01 04:52:00 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,21 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	offset;
 
-	/* duplicate the string up to dstsize */
 	offset = 0;
-	/* guard against silly dstsize values */
 	if (dstsize > 0)
 	{
 		while (*(src + offset) != '\0')
 		{
-			/* bail if dstsize is met */
 			if (offset == dstsize)
 			{
 				offset--;
 				break ;
 			}
-			/* duplicate the string */
 			*(dst + offset) = *(src + offset);
 			offset++;
 		}
 	}
-	/* always remember to cap a created string! */
 	*(dst + offset) = '\0';
-	/* return the string length of src */
 	while (*(src + offset) != '\0')
 		offset++;
 	return (offset);
