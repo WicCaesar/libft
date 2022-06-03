@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 07:53:03 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/01 13:01:58 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:24:34 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@
 // removed from the beginning and the end of the string.
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t		length;
-	char		*trimmed;
+	size_t	length;
+	char	*trimmed;
 
+	// TENTAR COM MEU SPLITTTTTTTTTTTT
 	if (!s1)
 		return (NULL);
 	if (!set)

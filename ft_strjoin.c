@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 05:30:33 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/01 07:27:58 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:39:15 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	totallength;
 	char	*superbonder;
 
-	if (!s1 && !s2)
+	if (!s1 || !s2)
 		return (NULL);
 	s1length = ft_strlen(s1);
 	s2length = ft_strlen(s2);

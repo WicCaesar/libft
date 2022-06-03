@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/18 20:12:06 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/02 21:46:49 by cnascime         ###   ########.fr       */
+/*   Created: 2022/06/01 13:11:31 by cnascime          #+#    #+#             */
+/*   Updated: 2022/06/03 19:36:33 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-// Points to the first byte that corresponds to c in a string.
-void	*ft_memchr(const void *s, int c, size_t n)
+// Passes the address of every character of a string to a function.
+// Alters the source string directly, hence no const char.
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t			i;
-	unsigned char	*string;
+	unsigned int	i;
 
+	if (!s || !f)
+		return ; // Testar com NULL, mas precisa incluir libft.
 	i = 0;
-	string = (unsigned char *)s;
-	while (i < n)
+	while (s[i] != '\0')
 	{
-		if (string[i] == (unsigned char)c)
-			return (string + i);
+		f(i, &s[i]);
 		i++;
 	}
-	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:00:00 by cnascime          #+#    #+#             */
-/*   Updated: 2022/05/25 22:25:08 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/02 22:13:03 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 // better to search for the correspondences as it scans through the string.
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	length;
+	int		length;
 	char	*rewind;
 
 	length = ft_strlen(s);
 	rewind = (char *)s + length;
-	while (length-- > 0)
+	while (length-- >= 0)
 	{
-		if (*rewind == c)
+		if (*rewind == (unsigned char)c)
 			return (rewind);
 		rewind--;
 	}

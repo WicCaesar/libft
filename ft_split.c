@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:07:44 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/01 13:08:30 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/02 21:29:44 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	**ft_split(char const *s, char c)
 	char	**kintsugi;
 
 	shard = 0;
-	count = ft_shardcounter(s, c);
+	count = ft_shardcounter((char *)s, c);
 	kintsugi = malloc(sizeof(char *) * (count + 1));
 	if (!kintsugi)
 	{
@@ -36,7 +36,17 @@ char	**ft_split(char const *s, char c)
 	{
 		while (ft_isforbidden(*s, c))
 			s++;
-		kintsugi[shard] = ft_superbonder(s, c);
+		kintsugi[shard] = ft_superbonder((char *)s, c);
+		if (!kintsugi[shard])
+		{
+			while (shard)
+			{
+				free (kintsugi[shard]);
+				shard--;
+			}
+			free (kintsugi);
+			return (NULL);
+		}
 		while (!ft_isforbidden(*s, c))
 			s++;
 		shard++;
@@ -86,6 +96,8 @@ static char	*ft_superbonder(char *altogether, char forbidden)
 	char	*shard;
 
 	shard = malloc(sizeof(char) * (ft_shardsize(altogether, forbidden) + 1));
+	if (!shard)
+		return (NULL);
 	i = 0;
 	while (!ft_isforbidden(*altogether, forbidden))
 	{
@@ -94,11 +106,6 @@ static char	*ft_superbonder(char *altogether, char forbidden)
 		altogether++;
 	}
 	shard[i] = '\0';
-	/* if (!shard)
-	{
-		free (shard);
-		return (NULL);
-	} adianta fazer isso nesse estágio ou deveria ser feito logo após malloc? */
 	return (shard);
 }
 
