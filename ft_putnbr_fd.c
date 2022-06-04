@@ -6,10 +6,11 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:45:22 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/04 01:56:36 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/04 03:15:21 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Prints a number in a recursive way.
 void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned char	c;
@@ -34,7 +35,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		ft_putnbr_fd(n / 10);
+		ft_putnbr_fd(n % 10);
 	}
 }
