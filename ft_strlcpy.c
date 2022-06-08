@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:36:30 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/03 16:03:17 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/08 19:59:40 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	if (dstsize == 0)
 		return (ft_strlen(src));
-	if (dstsize > 0)
+	while (i < dstsize - 1 && src[i] != '\0')
 	{
-		while (src[i] != '\0')
-		{
-			if (i == dstsize)
-			{
-				i--;
-				break ;
-			}
-			dst[i] = src[i];
-			i++;
-		}
+		dst[i] = src[i];
+		i++;
 	}
 	dst[i] = '\0';
 	return (ft_strlen(src));

@@ -597,7 +597,7 @@ void	test_ft_strdup(void)
 
 void	test_ft_substr(void)
 {
-	char	substr_word1[] = "ocupado";
+	char	substr_word1[] = "ocupadinha";
 	char	substr_word2[] = "";
 
 	printf("ft_substr\n");
@@ -609,9 +609,9 @@ void	test_ft_substr(void)
 	printf("%s\n", ft_substr("ocupado",    0, 0));
 	printf("%s\n", ft_substr(substr_word2, 0, 0));
 	printf("%s\n", ft_substr("",    	   0, 0));
-	printf("%s\n", ft_substr(substr_word1, 4, 2));
-	printf("%s\n", ft_substr("ocupado",    4, 1));
-	printf("%s\n", ft_substr(substr_word1, 4, 2));
+	printf("%s\n", ft_substr(substr_word1, 4, 2)); // ad - está indo ado por quê?
+	printf("%s\n", ft_substr(substr_word1, 4, 1));
+	printf("%s\n", ft_substr("ocupadinha",    4, 2)); // ad - está indo ado por quê?
 	printf("%s\n", ft_substr("",    	   4, 2));
 	printf("%s\n", ft_substr(substr_word2, 1, 4));
 	printf("%s\n", ft_substr("",    	   1, 4));
@@ -701,17 +701,15 @@ void	test_ft_strtrim(void)
 	char	strtrim_string5[] = "    ---despacio";
 	char	strtrim_forbidden2[] = " -";
 
-	printf("%s\n", ft_strtrim(strtrim_string1, strtrim_forbidden1)); // nenhuma tira do final
-	printf("%s\n", ft_strtrim(strtrim_string2, strtrim_forbidden1));
-	printf("%s\n", ft_strtrim(strtrim_string3, strtrim_forbidden2));
-	printf("%s\n", ft_strtrim("desbundes", "des"));
-	printf("%s\n", ft_strtrim("imundes", "des"));
-	printf("%s\n", ft_strtrim(strtrim_string4, strtrim_forbidden2));
-	printf("%s\n", ft_strtrim(strtrim_string5, strtrim_forbidden2));
-	printf("%s\n", ft_strtrim("    ---despacio", " -")); 
-	printf("%s\n", ft_strtrim("despacio   ------   ", " -")); // tirando o último caractere permitido?
-	// só tira do final caso não tenha tirado do começo
-	// no final está tirando uma letra a mais
+	printf("%s\n\n", ft_strtrim(strtrim_string1, strtrim_forbidden1));
+	printf("%s\n\n", ft_strtrim(strtrim_string2, strtrim_forbidden1));
+	printf("%s\n\n", ft_strtrim(strtrim_string3, strtrim_forbidden1));
+	printf("%s\n\n", ft_strtrim("desbundes", "des"));
+	printf("%s\n\n", ft_strtrim("imundes", "des"));
+	printf("%s\n\n", ft_strtrim(strtrim_string4, strtrim_forbidden2));
+	printf("%s\n\n", ft_strtrim(strtrim_string5, strtrim_forbidden2));
+	printf("%s\n\n", ft_strtrim("    ---despacio", " -")); 
+	printf("%s\n\n", ft_strtrim("despacio   ------   ", " -"));
 	printf("---------------------------------------------------\n\v");
 }
 

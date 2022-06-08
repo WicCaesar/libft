@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 05:16:47 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/01 05:24:01 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/08 19:41:31 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
+	if ((size_t)start > ft_strlen(s))
 		return (ft_strdup(""));
 	if (ft_strlen(s) - start >= len)
 		substr = malloc(len + 1);
