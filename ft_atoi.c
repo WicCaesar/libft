@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 16:20:07 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/04 03:06:20 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/05 06:13:42 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ int	ft_atoi(const char *str)
 	num = 0;
 	operator = 1;
 	while (str[i] != '\0')
-	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i] == '-')
-			operator = -operator;
-		i++;
+		if (str[i] == '-' || str[i] == '+')
+		{
+			if (str[i] == '-')
+				operator = -operator;
+			i++;
+		}
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{

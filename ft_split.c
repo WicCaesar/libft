@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:07:44 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/02 21:29:44 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/05 08:59:12 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,6 @@ static int	ft_shardcounter(char *altogether, char forbidden)
 // 1-true if it's forbidden, 2-false if it's allowed.
 static int	ft_isforbidden(char character, char forbidden)
 {
-	int	i;
-
-	i = 0;
 	if (character == forbidden)
 		return (1);
 	if (character == '\0')

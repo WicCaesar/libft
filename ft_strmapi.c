@@ -6,10 +6,33 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:12:17 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/03 19:36:01 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/05 09:03:35 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+// Passes the address of every character of a string to a function.
+// Doesn't alter the source string, allocates memory for a new string.
+// Returns the string created from the successive applications of ’f’.
+// Returns NULL if the allocation fails.
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	size_t	i;
+	char	*postfunction;
+
+	if (!s || !f)
+		return (0);
+	postfunction = malloc(sizeof(*s) * (ft_strlen(s) + 1));
+	if (!postfunction)
+		return (NULL);
+	i = 0;
+	postfunction = ft_strdup(s);
+	while (postfunction[i] != '\0')
+	{
+		f(i, (char)postfunction[i]);
+		i++;
+	}
+	postfunction[i] = '\0';
+	return (postfunction);
+}
