@@ -76,15 +76,15 @@ void	test_ft_memset(void)
 	char	memset_word5[] = "adotado";
 
 	printf("ft_memset\n");
-	printf("%s\t", 	  memset(memset_word1, '*', 1));
+	printf("%s\n", 	  memset(memset_word1, '*', 1));
 	printf("%s\n", ft_memset(memset_word1, '*', 1));
-	printf("%s\t", 	  memset(memset_word2, '$', 3));
+	printf("%s\n", 	  memset(memset_word2, '$', 3));
 	printf("%s\n", ft_memset(memset_word2, '$', 3));
-	printf("%s\t", 	  memset(memset_word3, '%', 5));
+	printf("%s\n", 	  memset(memset_word3, '%', 5));
 	printf("%s\n", ft_memset(memset_word3, '%', 5));
-	printf("%s\t", 	  memset(memset_word4, '.', 8));
+	printf("%s\n", 	  memset(memset_word4, '.', 8));
 	printf("%s\n", ft_memset(memset_word4, '.', 8));
-	printf("%s\t", 	  memset(memset_word5, '!', 1));
+	printf("%s\n", 	  memset(memset_word5, '!', 1));
 	printf("%s\n", ft_memset(memset_word5, '!', 1));
 	printf("---------------------------------------------------\n\v");
 }
@@ -220,13 +220,13 @@ void	test_ft_isalpha(void)
 	printf("\n");
 	printf("ft_isalpha\n");
 	printf("W %d\t", 	isalpha('W'));
-	printf("W %d\n", ft_isalpha('W'));
+	printf("%d\n", 	 ft_isalpha('W'));
 	printf("i %d\t", 	isalpha('i'));
-	printf("i %d\n", ft_isalpha('i'));
+	printf("%d\n", 	 ft_isalpha('i'));
 	printf("0 %d\t", 	isalpha('0'));
-	printf("0 %d\n", ft_isalpha('0'));
+	printf("%d\n", 	 ft_isalpha('0'));
 	printf("& %d\t", 	isalpha('&'));
-	printf("& %d\n", ft_isalpha('&'));
+	printf("%d\n", 	 ft_isalpha('&'));
 	printf("---------------------------------------------------\n\v");
 }
 
@@ -234,13 +234,13 @@ void	test_ft_isdigit(void)
 {
 	printf("ft_isdigit\n");
 	printf("V %d\t", 	isdigit('V'));
-	printf("V %d\n", ft_isdigit('V'));
+	printf("%d\n", 	 ft_isdigit('V'));
 	printf("1 %d\t", 	isdigit('1'));
-	printf("1 %d\n", ft_isdigit('1'));
+	printf("%d\n", 	 ft_isdigit('1'));
 	printf("4 %d\t", 	isdigit('4'));
-	printf("4 %d\n", ft_isdigit('4'));
+	printf("%d\n", 	 ft_isdigit('4'));
 	printf("O %d\t", 	isdigit('O'));
-	printf("O %d\n", ft_isdigit('O'));
+	printf("%d\n", 	 ft_isdigit('O'));
 	printf("---------------------------------------------------\n\v");
 }
 
@@ -248,13 +248,13 @@ void	test_ft_isalnum(void)
 {
 	printf("ft_isalnum\n");
 	printf("P %d\t", 	isalnum('P'));
-	printf("P %d\n", ft_isalnum('P'));
+	printf("%d\n", 	 ft_isalnum('P'));
 	printf("h %d\t", 	isalnum('h'));
-	printf("h %d\n", ft_isalnum('h'));
+	printf("%d\n", 	 ft_isalnum('h'));
 	printf("& %d\t", 	isalnum('&'));
-	printf("& %d\n", ft_isalnum('&'));
+	printf("%d\n", 	 ft_isalnum('&'));
 	printf("4 %d\t", 	isalnum('4'));
-	printf("4 %d\n", ft_isalnum('4'));
+	printf("%d\n", 	 ft_isalnum('4'));
 	printf("---------------------------------------------------\n\v");
 }
 
@@ -262,13 +262,13 @@ void	test_ft_isascii(void)
 {
 	printf("ft_isascii\n");
 	printf("T %d\t", 	isascii('T'));
-	printf("T %d\n", ft_isascii('T'));
+	printf("%d\n", 	 ft_isascii('T'));
 	printf("h %d\t", 	isascii('h'));
-	printf("h %d\n", ft_isascii('h'));
+	printf("%d\n", 	 ft_isascii('h'));
 	printf("4 %d\t", 	isascii('4'));
-	printf("4 %d\n", ft_isascii('4'));
+	printf("%d\n", 	 ft_isascii('4'));
 	printf("[129] %d\t", 	isascii(129));
-	printf("[129] %d\n", ft_isascii(129));
+	printf("%d\n", 		 ft_isascii(129));
 	printf("---------------------------------------------------\n\v");
 }
 
@@ -276,15 +276,15 @@ void	test_ft_isprint(void)
 {
 	printf("ft_isprint\n");
 	printf("[HT]\\t %d\t", 	isprint(9));
-	printf("[HT]\\t %d\n", ft_isprint(9));
+	printf("%d\n", 		 ft_isprint(9));
 	printf("[HT]\\v %d\t", 	isprint(11));
-	printf("[HT]\\v %d\n", ft_isprint(11));
+	printf("%d\n", 		 ft_isprint(11));
 	printf("+ %d\t", 	isprint(43));
-	printf("+ %d\n", ft_isprint(43));
+	printf("%d\n", 	 ft_isprint(43));
 	printf("[DEL] %d\t", 	isprint(127));
-	printf("[DEL] %d\n", ft_isprint(127));
+	printf("%d\n", 		 ft_isprint(127));
 	printf("[NUL] %d\t", 	isprint(0));
-	printf("[NUL] %d\n", ft_isprint(0));
+	printf("%d\n", 		 ft_isprint(0));
 	printf("---------------------------------------------------\n\v\v\v\v\v\v");
 }
 
@@ -292,11 +292,11 @@ void	test_ft_toupper(void)
 {
 	printf("ft_toupper\n");
 	printf("w %c\t", 	toupper('w'));
-	printf("w %c\n", ft_toupper('w'));
+	printf("%c\n", 	 ft_toupper('w'));
 	printf("I %c\t", 	toupper('I'));
-	printf("I %c\n", ft_toupper('I'));
+	printf("%c\n", 	 ft_toupper('I'));
 	printf("4 %c\t", 	toupper('4'));
-	printf("4 %c\n", ft_toupper('4'));
+	printf("%c\n", 	 ft_toupper('4'));
 	printf("---------------------------------------------------\n\v");
 }
 
@@ -304,11 +304,11 @@ void	test_ft_tolower(void)
 {
 	printf("ft_tolower\n");
 	printf("w %c\t", 	tolower('w'));
-	printf("w %c\n", ft_tolower('w'));
+	printf("%c\n", 	 ft_tolower('w'));
 	printf("I %c\t", 	tolower('I'));
-	printf("I %c\n", ft_tolower('I'));
+	printf("%c\n", 	 ft_tolower('I'));
 	printf("4 %c\t", 	tolower('4'));
-	printf("4 %c\n", ft_tolower('4'));
+	printf("%c\n", 	 ft_tolower('4'));
 	printf("---------------------------------------------------\n\v");
 }
 
@@ -420,13 +420,15 @@ void	test_ft_strlcat(void)
 	char	strlcat_dest[] = "Under my umbrella";
 
 	printf("ft_strlcat\n");
+	printf("%zu\t",    strlcat(strlcat_dest, strlcat_src, 15));
 	printf("%zu\n", ft_strlcat(strlcat_dest, strlcat_src, 15));
+	printf("%zu\t",    strlcat(strlcat_dest, strlcat_src, 10));
 	printf("%zu\n", ft_strlcat(strlcat_dest, strlcat_src, 10));
-	printf("%lu\n",    strlcat(strlcat_dest, strlcat_src, 9));
+	printf("%lu\t",    strlcat(strlcat_dest, strlcat_src, 9));
 	printf("%zu\n", ft_strlcat(strlcat_dest, strlcat_src, 9));
-	printf("%lu\n",    strlcat(strlcat_dest, strlcat_src, 4));
+	printf("%lu\t",    strlcat(strlcat_dest, strlcat_src, 4));
 	printf("%zu\n", ft_strlcat(strlcat_dest, strlcat_src, 4));
-	printf("%lu\n",    strlcat(strlcat_dest, strlcat_src, 0));
+	printf("%lu\t",    strlcat(strlcat_dest, strlcat_src, 0));
 	printf("%zu\n", ft_strlcat(strlcat_dest, strlcat_src, 0));
 	printf("---------------------------------------------------\n\v");
 }
@@ -481,35 +483,35 @@ void	test_ft_atoi(void)
 	char	atoi_string5[] = "-2147483647";
 
 	printf("ft_atoi\n");
-	printf("%i\n", atoi(atoi_string1));
+	printf("%i\n", 	  atoi(atoi_string1));
 	printf("%i\n", ft_atoi(atoi_string1));
-	printf("%i\n", atoi(atoi_string2));
+	printf("%i\n", 	  atoi(atoi_string2));
 	printf("%i\n", ft_atoi(atoi_string2));
-	printf("%i\n", atoi(atoi_string3));
+	printf("%i\n", 	  atoi(atoi_string3));
 	printf("%i\n", ft_atoi(atoi_string3));
-	printf("%i\n", atoi(atoi_string4));
+	printf("%i\n", 	  atoi(atoi_string4));
 	printf("%i\n", ft_atoi(atoi_string4));
-	printf("%i\n", atoi(atoi_string5));
+	printf("%i\n", 	  atoi(atoi_string5));
 	printf("%i\n", ft_atoi(atoi_string5));
-	printf("%i\n", atoi("481516"));
+	printf("%i\n", 	  atoi("481516"));
 	printf("%i\n", ft_atoi("481516"));
-	printf("%i\n", atoi("-2342"));
+	printf("%i\n", 	  atoi("-2342"));
 	printf("%i\n", ft_atoi("-2342"));
-	printf("%i\n", atoi(" -2342 "));
+	printf("%i\n", 	  atoi(" -2342 "));
 	printf("%i\n", ft_atoi(" -2342 "));
-	printf("%i\n", atoi("--2342"));
+	printf("%i\n", 	  atoi("--2342"));
 	printf("%i\n", ft_atoi("--2342"));
-	printf("%i\n", atoi("\n-+-2342\n"));
+	printf("%i\n", 	  atoi("\n-+-2342\n"));
 	printf("%i\n", ft_atoi("\n-+-2342\n"));
-	printf("%i\n", atoi("\t---2342\t"));
+	printf("%i\n", 	  atoi("\t---2342\t"));
 	printf("%i\n", ft_atoi("\t---2342\t"));
-	printf("%i\n", atoi("23p42 "));
+	printf("%i\n", 	  atoi("23p42 "));
 	printf("%i\n", ft_atoi("23p42 "));
-	printf("%i\n", atoi("42ç9"));
+	printf("%i\n", 	  atoi("42ç9"));
 	printf("%i\n", ft_atoi("42ç9"));
-	printf("%i\n", atoi("ç23"));
+	printf("%i\n", 	  atoi("ç23"));
 	printf("%i\n", ft_atoi("ç23"));
-	printf("%i\n", atoi("~23"));
+	printf("%i\n", 	  atoi("~23"));
 	printf("%i\n", ft_atoi("~23"));
 	printf("---------------------------------------------------\n\v");
 }
@@ -670,7 +672,6 @@ void	test_ft_putnbr_fd(void)
 	int	putnbr_i3 = -0;
 	int	putnbr_i4 = 0;
 	int	putnbr_i5 = 2147483647;
-	int	putnbr_i6 = 2147483648;
 
 	printf("ft_putnbr_fd\n");
 	ft_putnbr_fd(putnbr_i1, 1);
@@ -683,9 +684,7 @@ void	test_ft_putnbr_fd(void)
 	printf("\n");
 	ft_putnbr_fd(putnbr_i5, 1);
 	printf("\n");
-	ft_putnbr_fd(putnbr_i6, 1);
-	printf("\n");
-	printf("---------------------------------------------------\n\v");
+	printf("---------------------------------------------------\n\v\v\v\v\v\v");
 }
 
 // strmapi
@@ -696,25 +695,31 @@ void	test_ft_strtrim(void)
 {
 	char	strtrim_string1[] = "desbundes";
 	char	strtrim_string2[] = "desbundesbundes";
+	char	strtrim_string3[] = "imundes";
 	char	strtrim_forbidden1[] = "des";
-	char	strtrim_string3[] = "    ---despacio---   ";
-	char	strtrim_string4[] = "    ---despacio";
+	char	strtrim_string4[] = "    ---despacio---   ";
+	char	strtrim_string5[] = "    ---despacio";
 	char	strtrim_forbidden2[] = " -";
 
-	printf("%s\n", ft_strtrim(strtrim_string1, strtrim_forbidden1));
+	printf("%s\n", ft_strtrim(strtrim_string1, strtrim_forbidden1)); // nenhuma tira do final
 	printf("%s\n", ft_strtrim(strtrim_string2, strtrim_forbidden1));
-	printf("%s\n", ft_strtrim("desbundes", "des"));
 	printf("%s\n", ft_strtrim(strtrim_string3, strtrim_forbidden2));
+	printf("%s\n", ft_strtrim("desbundes", "des"));
+	printf("%s\n", ft_strtrim("imundes", "des"));
 	printf("%s\n", ft_strtrim(strtrim_string4, strtrim_forbidden2));
-	printf("%s\n", ft_strtrim("    ---despacio", " -"));
-	printf("%s\n", ft_strtrim("despacio   ------   ", " -"));
+	printf("%s\n", ft_strtrim(strtrim_string5, strtrim_forbidden2));
+	printf("%s\n", ft_strtrim("    ---despacio", " -")); 
+	printf("%s\n", ft_strtrim("despacio   ------   ", " -")); // tirando o último caractere permitido?
+	// só tira do final caso não tenha tirado do começo
+	// no final está tirando uma letra a mais
+	printf("---------------------------------------------------\n\v");
 }
 
 void	test_ft_split(void)
 {
 
 	int		i = 0;
-	char	altogether[] = "OPINTOPIAAPIAPINGAQUANTOMAISOPINTOPIAMAISAPIAPINGA";
+	char	altogether[] = "OPINTODOMEUPAI";
 	char	forbidden = 'P';
 	char	**shard;
 
@@ -731,25 +736,23 @@ void	test_ft_split(void)
 
 void	test_ft_itoa(void)
 {
-	int	itoa_int = 2342;
-	int	itoa_int2 = -2147483649;
-	int	itoa_int3 = -2147483648;
-	int	itoa_int4 = -2147483647;
-	int	itoa_int5 = 2147483647;
-	int	itoa_int6 = 2147483648;
-	int	itoa_int7 = 2147483649;
-	int	itoa_int8 = 481516;
-	int	itoa_int9 = -2342;
-	int	itoa_int10 =  -2342 ;
-	int	itoa_int11 = -+-2342;
-	int	itoa_int12 = 0;
-	int	itoa_int13 = -1234567890;
-	int	itoa_int14 = 1234567890;
-	int	itoa_int15 = -1073741823;
-	int	itoa_int16 = 1073741823;
+	int	itoa_int1 = 2342;
+	int	itoa_int2 = -2147483648;
+	int	itoa_int3 = -2147483647;
+	int	itoa_int4 = 2147483647;
+	int	itoa_int5 = 481516;
+	int	itoa_int6 = -2342;
+	int	itoa_int7 =  -2342 ;
+	int	itoa_int8 = -+-2342;
+	int	itoa_int9 = -1234567890;
+	int	itoa_int10 = 1234567890;
+	int	itoa_int11 = -1073741823;
+	int	itoa_int12 = 1073741823;
+	int	itoa_int13 = 0;
+	int	itoa_int14 = -0;
 
 	printf("ft_itoa\n");
-	printf("%s\n", ft_itoa(itoa_int));
+	printf("%s\n", ft_itoa(itoa_int1));
 	printf("%s\n", ft_itoa(itoa_int2));
 	printf("%s\n", ft_itoa(itoa_int3));
 	printf("%s\n", ft_itoa(itoa_int4));
@@ -763,8 +766,6 @@ void	test_ft_itoa(void)
 	printf("%s\n", ft_itoa(itoa_int12));
 	printf("%s\n", ft_itoa(itoa_int13));
 	printf("%s\n", ft_itoa(itoa_int14));
-	printf("%s\n", ft_itoa(itoa_int15));
-	printf("%s\n", ft_itoa(itoa_int16));
 
 /*int    g_n[] = {\
                 -2147483648, \

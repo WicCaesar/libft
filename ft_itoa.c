@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 03:58:29 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/03 17:22:05 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:12:28 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ static int	ft_places(long number)
 	size_t	places;
 
 	places = 0;
-	if (number < 0)
+	if (number <= 0)
 	{
 		places++;
 		number *= -1;
 	}
-	while (number > 9)
+	while (number > 0)
 	{
 		places++;
 		number /= 10;

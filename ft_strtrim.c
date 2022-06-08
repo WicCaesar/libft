@@ -6,13 +6,13 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 07:53:03 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/07 11:47:51 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:31:41 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		isforbidden(char character, char *forbidden);
+static int		ft_isforbidden(char character, char *forbidden);
 
 // Allocates and returns a copy of s1 with the characters specified in set
 // removed from the beginning and the end of the string.
@@ -25,11 +25,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	length = ft_strlen(s1);
 	trimbw = 0;
-	while ((length - trimbw) > 0
-		&& isforbidden(s1[length - trimbw], (char *)set))
+	while ((length - trimbw) >= 0
+		&& ft_isforbidden(s1[length - trimbw], (char *)set))
 		trimbw++;
 	trimfw = 0;
-	while (s1[trimfw] != '\0' && isforbidden(s1[trimfw], (char *)set))
+	while (s1[trimfw] != '\0' && ft_isforbidden(s1[trimfw], (char *)set))
 		trimfw++;
 	trimmed = malloc(sizeof(char *) * (length - trimbw - trimfw + 1));
 	if (!trimmed)
@@ -47,10 +47,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 // i = 1;
 // começar a copiar para trimmed a partir de s1[trimfront + i] ft_substr
 
-
 // Checks whether the character in question is in the forbidden list.
 // 1-true if it's forbidden, 2-false if it's allowed.
-static int	isforbidden(char character, char *forbidden)
+static int	ft_isforbidden(char character, char *forbidden)
 {
 	int	i;
 
@@ -66,6 +65,7 @@ static int	isforbidden(char character, char *forbidden)
 	return (0);
 }
 
+// jocardos
 /*char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	length;

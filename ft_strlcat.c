@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:37:56 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/03 16:12:11 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/08 14:21:53 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dstlength;
 	size_t	i;
 
-	srclength = 0;
+	srclength = ft_strlen(src);
 	if (dstsize == 0)
 		return (srclength);
-	while (src[srclength] != '\0')
-		srclength++;
-	dstlength = 0;
-	while (dst[dstlength] != '\0')
-		dstlength++;
+	dstlength = ft_strlen(dst);
 	if (dstsize <= dstlength)
-		srclength = srclength + dstsize;
+		srclength += dstsize;
 	else
-		srclength = srclength + dstlength;
+		srclength += dstlength;
 	i = 0;
 	while (src[i] != '\0' && dstlength < dstsize - 1)
 	{

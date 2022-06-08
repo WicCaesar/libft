@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:12:17 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/05 09:03:35 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/08 09:52:57 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 // Passes the address of every character of a string to a function.
 // Doesn't alter the source string, allocates memory for a new string.
 // Returns the string created from the successive applications of ’f’.
-// Returns NULL if the allocation fails.
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;

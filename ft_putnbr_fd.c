@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:45:22 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/05 08:58:32 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:13:46 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putnbr_fd(int n, int fd)
 		if (n == -2147483648)
 		{
 			write(fd, "-2147483648", 11);
-			break ;
+			return ;
 		}
 		else
 		{

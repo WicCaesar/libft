@@ -10,7 +10,7 @@ SOURCES	= ft_strlen.c ft_memcpy.c ft_memset.c ft_bzero.c ft_memmove.c \
 # .c=.o implicitly compiles the source-code into binary objects.
 OBJECTS	= ${SOURCES:.c=.o}
 LIBNAME	= libft.a
-COMPILE	= gcc
+COMPILE	= cc
 REMOVE	= rm -f
 FLAGS	= -Wall -Wextra -Werror
 
