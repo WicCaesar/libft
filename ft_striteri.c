@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 13:11:31 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/03 19:36:33 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/09 18:46:30 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int	i;
 
 	if (!s || !f)
-		return ; // Testar com NULL, mas precisa incluir libft.
+		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{

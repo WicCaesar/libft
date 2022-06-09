@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 07:53:03 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/08 20:08:05 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/09 19:05:06 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		trimbw;
 	char	*trimmed;
 
+	if (!s1)
+		return (NULL);
 	length = ft_strlen(s1);
 	trimbw = 0;
 	while ((length - trimbw - 1) >= 0

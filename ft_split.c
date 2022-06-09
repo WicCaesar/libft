@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:07:44 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/08 09:51:59 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/09 19:15:51 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	**ft_split(char const *s, char c)
 	int		count;
 	char	**kintsugi;
 
+	if (!s)
+		return (NULL);
 	shard = 0;
 	count = ft_shardcounter((char *)s, c);
 	kintsugi = malloc(sizeof(char *) * (count + 1));
@@ -37,16 +39,6 @@ char	**ft_split(char const *s, char c)
 		while (ft_isforbidden(*s, c))
 			s++;
 		kintsugi[shard] = ft_superbonder((char *)s, c);
-		if (!kintsugi[shard])
-		{
-			while (shard)
-			{
-				free (kintsugi[shard]);
-				shard--;
-			}
-			free (kintsugi);
-			return (NULL);
-		}
 		while (!ft_isforbidden(*s, c))
 			s++;
 		shard++;

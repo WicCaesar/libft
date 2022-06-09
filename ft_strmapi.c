@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:12:17 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/08 09:52:57 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/09 18:29:27 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,15 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*postfunction;
 
 	if (!s || !f)
-		return (0);
-	postfunction = malloc(sizeof(*s) * (ft_strlen(s) + 1));
-	if (!postfunction)
+		return (NULL);
+	postfunction = ft_calloc(ft_strlen(s) + 1, 1);
+	if (postfunction == NULL)
 		return (NULL);
 	i = 0;
-	postfunction = ft_strdup(s);
-	while (postfunction[i] != '\0')
+	while (s[i] != '\0')
 	{
-		f(i, (char)postfunction[i]);
+		postfunction[i] = f(i, s[i]);
 		i++;
 	}
-	postfunction[i] = '\0';
 	return (postfunction);
 }

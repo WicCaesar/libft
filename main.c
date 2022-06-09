@@ -575,7 +575,7 @@ void	test_ft_calloc(void)
 	int	*calloc_test;
 
 	printf("ft_calloc jocardos\n");
-	calloc_test = (int *)ft_calloc(6, sizeof(int));
+	calloc_test = ft_calloc(6, sizeof(int));
 	for(int i = 0; i < 6; i++)
 		printf("%d", calloc_test[i]);
 	printf("\n");
@@ -588,7 +588,7 @@ void	test_ft_strdup(void)
 	char strdup_str[] = "Inaraí";
 	char *strdup_str2;
 	
-	printf("ft_strdup jocardos\n");
+	printf("ft_strdup\n");
 	strdup_str2 = ft_strdup(strdup_str);
 	printf("%s, %s\n", strdup_str, strdup_str2);
 	free(strdup_str2);
@@ -597,7 +597,7 @@ void	test_ft_strdup(void)
 
 void	test_ft_substr(void)
 {
-	char	substr_word1[] = "ocupadinha";
+	char	substr_word1[] = "ocupado";
 	char	substr_word2[] = "";
 
 	printf("ft_substr\n");
@@ -609,9 +609,9 @@ void	test_ft_substr(void)
 	printf("%s\n", ft_substr("ocupado",    0, 0));
 	printf("%s\n", ft_substr(substr_word2, 0, 0));
 	printf("%s\n", ft_substr("",    	   0, 0));
-	printf("%s\n", ft_substr(substr_word1, 4, 2)); // ad - está indo ado por quê?
+	printf("%s\n", ft_substr(substr_word1, 4, 2));
 	printf("%s\n", ft_substr(substr_word1, 4, 1));
-	printf("%s\n", ft_substr("ocupadinha",    4, 2)); // ad - está indo ado por quê?
+	printf("%s\n", ft_substr("ocupado",    4, 2));
 	printf("%s\n", ft_substr("",    	   4, 2));
 	printf("%s\n", ft_substr(substr_word2, 1, 4));
 	printf("%s\n", ft_substr("",    	   1, 4));
@@ -693,6 +693,7 @@ void	test_ft_putnbr_fd(void)
 
 void	test_ft_strtrim(void)
 {
+	printf("ft_strtrim\n");
 	char	strtrim_string1[] = "desbundes";
 	char	strtrim_string2[] = "desbundesbundes";
 	char	strtrim_string3[] = "imundes";
@@ -747,7 +748,7 @@ void	test_ft_itoa(void)
 	int	itoa_int11 = -1073741823;
 	int	itoa_int12 = 1073741823;
 	int	itoa_int13 = 0;
-	int	itoa_int14 = -0;
+	int	itoa_int14 = 1;
 
 	printf("ft_itoa\n");
 	printf("%s\n", ft_itoa(itoa_int1));

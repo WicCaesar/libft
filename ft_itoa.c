@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 03:58:29 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/08 20:13:25 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/09 19:54:29 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_itoa(int n)
 
 	number = n;
 	places = ft_places(number);
-	string = (char *)malloc(sizeof(*string) * (places + 1));
+	string = (char *)ft_calloc(sizeof(*string) * (places), 1);
 	if (!string)
 		return (NULL);
 	if (number < 0)
@@ -32,8 +32,7 @@ char	*ft_itoa(int n)
 		string[0] = '-';
 		number *= -1;
 	}
-	string[places] = '\0';
-	while (places-- > 0)
+	while (places-- >= 0)
 	{
 		if (number / 10 < 1)
 			break ;
