@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:37:56 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/08 14:21:53 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/10 16:37:31 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dstlength++;
 		i++;
 	}
-	dst[dstlength] = '\0';
+	if (dstlength < dstsize)
+		dst[dstlength] = '\0';
 	return (srclength);
 }

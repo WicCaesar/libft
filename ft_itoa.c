@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 03:58:29 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/09 19:54:29 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/09 21:01:38 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char	*ft_itoa(int n)
 	return (string);
 }
 
+// Calculates how many decimal places the string'll need.
 static int	ft_places(long number)
 {
 	size_t	places;
