@@ -15,17 +15,17 @@ REMOVE	= rm -f
 FLAGS	= -Wall -Wextra -Werror
 
 # If bonus functions are present
-#BONUSSOURCES	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+BONUSSOURCES	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 		ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
-#BONUSOBJECTS	= ${BONUSSOURCES:.c=.o}
+BONUSOBJECTS	= ${BONUSSOURCES:.c=.o}
 ifdef HASBONUS
 	ALLOBJECTS = ${OBJECTS} ${BONUSOBJECTS}
 else
 	ALLOBJECTS = ${OBJECTS}
 endif
 
-bonus: #todo
+bonus:
 	make HASBONUS=1 all
 
 # Compiles from open-source to binary, but doesn't link. Necessary to run flags.
@@ -43,7 +43,7 @@ all:		${LIBNAME}
 
 # Removes only compiled objects.
 clean:
-	${REMOVE} ${ALLOBJECTS}
+	${REMOVE} ${OBJECTS} ${BONUSOBJECTS}
 
 # Removes compiled objects first, then proceeds to remove the library itself.
 fclean:		clean
