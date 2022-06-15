@@ -32,9 +32,10 @@ bonus:
 .c.o:		${OBJECTS}
 	${COMPILE} ${FLAGS} -c $< -o ${<:.c=.o}
 
-# Calling its name acts as its own makefile. Will compile only if the object dependencies are fulfilled.
-# ar creates an archive (here, library) from the files member (objects), replacing them as needed.
-# ranlib simply indexes every function in the library.
+# Calling its name acts as its own makefile. Will compile only if the object 
+# dependencies are fulfilled. ar creates an archive (here, library) from the 
+# files member (objects), # replacing them as needed. ranlib simply indexes 
+# every function in the library.
 ${LIBNAME}:	${ALLOBJECTS}
 	ar rc ${LIBNAME} ${ALLOBJECTS}
 	ranlib libft.a
