@@ -6,15 +6,15 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:13:09 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/10 12:36:25 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/15 20:32:08 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h> // malloc
-# include <unistd.h> // write
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

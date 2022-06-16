@@ -6,7 +6,7 @@
 /*   By: cnascime <cnascime@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 12:05:15 by cnascime          #+#    #+#             */
-/*   Updated: 2022/06/14 18:18:23 by cnascime         ###   ########.fr       */
+/*   Updated: 2022/06/15 19:23:24 by cnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!newnode)
 		{
 			ft_lstclear(&newlist, del);
-			return (newlist);
+			return (NULL);
 		}
 		ft_lstadd_back(&newlist, newnode);
 		lst = lst->next;
