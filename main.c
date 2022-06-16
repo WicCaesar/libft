@@ -518,15 +518,16 @@ void	test_ft_atoi(void)
 
 void	test_ft_strnstr(void)
 {
-	printf("%s\t", 	  strnstr("Toatoa ukulele", "ku", 14));
+	printf("ft_strnstr\n");
+	printf("%s\n", 	  strnstr("Toatoa ukulele", "ku", 14));
 	printf("%s\n", ft_strnstr("Toatoa ukulele", "ku", 14));
-	printf("%s\t", 	  strnstr("Toatoa ukulele", "ke", 14));
+	printf("%s\n", 	  strnstr("Toatoa ukulele", "ke", 14));
 	printf("%s\n", ft_strnstr("Toatoa ukulele", "ke", 14));
-	printf("%s\t", 	  strnstr("Huehuecoyotl", "Hue", 12));
+	printf("%s\n", 	  strnstr("Huehuecoyotl", "Hue", 12));
 	printf("%s\n", ft_strnstr("Huehuecoyotl", "Hue", 12));
-	printf("%s\t", 	  strnstr("Huehuecoyotl", "hue", 12));
+	printf("%s\n", 	  strnstr("Huehuecoyotl", "hue", 12));
 	printf("%s\n", ft_strnstr("Huehuecoyotl", "hue", 12));
-	printf("%s\t", 	  strnstr("Huehuecoyotl", "ue", 12));
+	printf("%s\n", 	  strnstr("Huehuecoyotl", "ue", 12));
 	printf("%s\n", ft_strnstr("Huehuecoyotl", "ue", 12));
 	printf("---------------------------------------------------\n\v");
 }
@@ -609,9 +610,9 @@ void	test_ft_substr(void)
 	printf("%s\n", ft_substr("ocupado",    0, 0));
 	printf("%s\n", ft_substr(substr_word2, 0, 0));
 	printf("%s\n", ft_substr("",    	   0, 0));
-	printf("%s\n", ft_substr(substr_word1, 4, 2));
+	printf("%s\n", ft_substr(substr_word1, 4, 3));
 	printf("%s\n", ft_substr(substr_word1, 4, 1));
-	printf("%s\n", ft_substr("ocupado",    4, 2));
+	printf("%s\n", ft_substr("ocupado",    4, 3));
 	printf("%s\n", ft_substr("",    	   4, 2));
 	printf("%s\n", ft_substr(substr_word2, 1, 4));
 	printf("%s\n", ft_substr("",    	   1, 4));
@@ -687,9 +688,49 @@ void	test_ft_putnbr_fd(void)
 	printf("---------------------------------------------------\n\v\v\v\v\v\v");
 }
 
-// strmapi
+char function_strmapi(unsigned int i, char c)
+{
+	i = 1;
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
+}
 
-// striteri
+void	test_ft_strmapi(void)
+{
+	void	*pointertofunction;
+	char	*string_strmapi;
+
+	pointertofunction = function_strmapi;
+	string_strmapi = ft_strmapi("Passarinho!\n", pointertofunction);
+	printf("ft_strmapi\n");
+	printf("%s", string_strmapi);
+	printf("---------------------------------------------------\n\v");
+}
+
+void function_striteri(unsigned int i, char *c)
+{
+	i = 1;
+	if (*c >= 'a' && *c <= 'z')
+		*c -= 32;
+	return ;
+}
+
+// Preciso fazer strdup pois, se passar direto ou através de uma variável própria,
+// não compila, dá bus error ou não executa a função.
+void	test_ft_striteri(void)
+{
+	void	*pointertofunction2;
+	char	*string_iteri;
+
+	pointertofunction2 = function_striteri;
+	string_iteri = ft_strdup("que som é esse?");
+	ft_striteri(string_iteri, pointertofunction2);
+	printf("ft_striteri\n");
+	printf("%s\n", string_iteri);
+	free(string_iteri);
+	printf("---------------------------------------------------\n\v");
+}
 
 void	test_ft_strtrim(void)
 {
@@ -702,15 +743,15 @@ void	test_ft_strtrim(void)
 	char	strtrim_string5[] = "    ---despacio";
 	char	strtrim_forbidden2[] = " -";
 
-	printf("%s\n\n", ft_strtrim(strtrim_string1, strtrim_forbidden1));
-	printf("%s\n\n", ft_strtrim(strtrim_string2, strtrim_forbidden1));
-	printf("%s\n\n", ft_strtrim(strtrim_string3, strtrim_forbidden1));
-	printf("%s\n\n", ft_strtrim("desbundes", "des"));
-	printf("%s\n\n", ft_strtrim("imundes", "des"));
-	printf("%s\n\n", ft_strtrim(strtrim_string4, strtrim_forbidden2));
-	printf("%s\n\n", ft_strtrim(strtrim_string5, strtrim_forbidden2));
-	printf("%s\n\n", ft_strtrim("    ---despacio", " -")); 
-	printf("%s\n\n", ft_strtrim("despacio   ------   ", " -"));
+	printf("%s\n", ft_strtrim(strtrim_string1, strtrim_forbidden1));
+	printf("%s\n", ft_strtrim(strtrim_string2, strtrim_forbidden1));
+	printf("%s\n", ft_strtrim(strtrim_string3, strtrim_forbidden1));
+	printf("%s\n", ft_strtrim("desbundes", "des"));
+	printf("%s\n", ft_strtrim("imundes", "des"));
+	printf("%s\n", ft_strtrim(strtrim_string4, strtrim_forbidden2));
+	printf("%s\n", ft_strtrim(strtrim_string5, strtrim_forbidden2));
+	printf("%s\n", ft_strtrim("    ---despacio", " -")); 
+	printf("%s\n", ft_strtrim("despacio   ------   ", " -"));
 	printf("---------------------------------------------------\n\v");
 }
 
@@ -718,7 +759,7 @@ void	test_ft_split(void)
 {
 
 	int		i = 0;
-	char	altogether[] = "OPINTODOMEUPAI";
+	char	altogether[] = "O PINTO DO MEU PAI";
 	char	forbidden = 'P';
 	char	**shard;
 
@@ -748,7 +789,8 @@ void	test_ft_itoa(void)
 	int	itoa_int11 = -1073741823;
 	int	itoa_int12 = 1073741823;
 	int	itoa_int13 = 0;
-	int	itoa_int14 = 1;
+	int	itoa_int14 = -0;
+	int	itoa_int15 = 1;
 
 	printf("ft_itoa\n");
 	printf("%s\n", ft_itoa(itoa_int1));
@@ -765,6 +807,7 @@ void	test_ft_itoa(void)
 	printf("%s\n", ft_itoa(itoa_int12));
 	printf("%s\n", ft_itoa(itoa_int13));
 	printf("%s\n", ft_itoa(itoa_int14));
+	printf("%s\n", ft_itoa(itoa_int15));
 
 /*int    g_n[] = {\
                 -2147483648, \
@@ -829,8 +872,8 @@ int	main(void)
 	test_ft_putstr_fd();
 	test_ft_putendl_fd();
 	test_ft_putnbr_fd();
-	// test_ft_strmapi();
-	// test_ft_striteri();
+	test_ft_strmapi();
+	test_ft_striteri();
 	test_ft_strtrim();
 	test_ft_split();
 	test_ft_itoa();
